@@ -43,20 +43,31 @@ class LayoutPatientsAppController extends GetxController {
   Future<void> updateCategories(id) async {
 
     FirebaseFirestore.instance.collection("Categories").doc("$id").get().then((value){
+
+      if(value.data()?['like']==true){
+
       if(value.data()!['like']==true){
+
         FirebaseFirestore.instance.collection("Categories").doc("$id").update({"like":false,"idOfPatients":tokenOfPatients}).then((value) {
           getAllSubsriptions();
           getAllCategories();
 
         });
       }
+
+      if(value.data()?['like']==false){
+
       if(value.data()!['like']==false){
+
         FirebaseFirestore.instance.collection("Categories").doc("$id").update({"like":true,"idOfPatients":tokenOfPatients}).then((value) {
           getAllSubsriptions();
           getAllCategories();
         });
       }
-    });
+      }
+      }
+    }
+    );
     update();
   }
 
@@ -92,6 +103,13 @@ class LayoutPatientsAppController extends GetxController {
   Future<void> changeValueOfIndex(value) async {
     indexPatients=value;
     if(indexPatients==0){
+      // articleController.changevalueOfHomePatients(false);
+      // groupChatPatientsController.changevalueOChatPatients(false);
+      getAllCategories();
+    }
+    if(indexPatients==1){
+      // articleController.changevalueOfHomePatients(false);
+      // groupChatPatientsController.changevalueOChatPatients(false);
       articleController.changevalueOfHomePatients(false);
       groupChatPatientsController.changevalueOChatPatients(false);
       getAllCategories();
@@ -105,6 +123,8 @@ class LayoutPatientsAppController extends GetxController {
 
     }
     if(indexPatients==2){
+      // articleController.changevalueOfHomePatients(false);
+      // groupChatPatientsController.changevalueOChatPatients(false);
       articleController.changevalueOfHomePatients(false);
       groupChatPatientsController.changevalueOChatPatients(false);
 
@@ -112,6 +132,8 @@ class LayoutPatientsAppController extends GetxController {
       update();
     }
     if(indexPatients==3){
+      // articleController.changevalueOfHomePatients(false);
+      // groupChatPatientsController.changevalueOChatPatients(false);
       articleController.changevalueOfHomePatients(false);
       groupChatPatientsController.changevalueOChatPatients(false);
 

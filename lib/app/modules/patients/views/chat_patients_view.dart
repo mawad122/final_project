@@ -34,6 +34,8 @@ class ChatPatientsView extends GetView<LayoutPatientsAppController> {
                     loginController.moveBetweenPages('GroupChatPatientsView',arguments:{
                       "token":controller.doctors[index].token,
                       "cover":controller.doctors[index].image,
+                      "name":controller.doctors[index].name,
+
                     } );
                   },
                   child: Row(

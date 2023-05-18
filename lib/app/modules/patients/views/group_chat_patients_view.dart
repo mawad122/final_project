@@ -36,6 +36,7 @@ controller.changevalueOChatPatients(true);
                     CustomSizeBox(0,width: 20,),
                     customCircleAvatar(25,color: Colors.white,
                         image:"${argument['cover']}")
+                    ,CustomSizeBox(0,width: 20,),CustomText(Colors.black, 20, FontWeight.w600,argument['name'] )
                     ,CustomSizeBox(0,width: 20,),CustomText(Colors.black, 20, FontWeight.w600, "omar")
                   ],
                 ),

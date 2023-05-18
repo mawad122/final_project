@@ -16,6 +16,7 @@ class ChatView extends GetView<LayoutController> {
    ChatView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
     valueOfChat==false?null:controller.getAllAccountPatients();
     return GetBuilder<LayoutController>(
       init: LayoutController(),
@@ -41,6 +42,8 @@ class ChatView extends GetView<LayoutController> {
                           groupChatController.getMessages(receiverId: patients[index].token);
                               loginController.moveBetweenPages('GroupChatView',arguments: {
                                 "token":patients[index].token,
+                                "cover":patients[index].image,
+                                "name":patients[index].name,
                                 "cover":patients[index].image
                               });
 
@@ -59,6 +62,7 @@ class ChatView extends GetView<LayoutController> {
                     CustomSizeBox(0,width: 10,),
                     Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
                       CustomText(Colors.black, 17, FontWeight.w600, "${patients[index].name}"),
+
                       CustomText(Colors.grey, 14, FontWeight.w400, "omar"),
 
                     ],),

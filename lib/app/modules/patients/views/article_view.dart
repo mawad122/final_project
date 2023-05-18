@@ -26,6 +26,11 @@ controller.getAllArticle("${argument['id']}");
               children: [
                 GestureDetector(onTap: (){
 LayoutPatientsAppController layout=LayoutPatientsAppController();
+// controller.changevalueOfHomePatients(true);
+// layout.getAllCategories().then((value) {
+  loginController.moveBetweenPages('LayoutPatientsAppView');
+
+// });
 controller.changevalueOfHomePatients(true);
 layout.getAllCategories().then((value) {
   loginController.moveBetweenPages('LayoutPatientsAppView');
