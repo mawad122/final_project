@@ -35,6 +35,7 @@ class ChatPatientsView extends GetView<LayoutPatientsAppController> {
                       "token":controller.doctors[index].token,
                       "cover":controller.doctors[index].image,
                       "name":controller.doctors[index].name,
+
                     } );
                   },
                   child: Row(

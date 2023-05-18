@@ -57,6 +57,7 @@ Future<void> changeValueOfIndex(value) async {
     bottomSheet=false;
     if(index==0){
       getAllCategories();
+
       // groupChatController.changevalueOChat(false);
       // addArticleController.changevalueOfHome(false);
     }
@@ -66,6 +67,16 @@ Future<void> changeValueOfIndex(value) async {
       //
       // addArticleController.changevalueOfHome(false);
 
+      groupChatController.changevalueOChat(false);
+      addArticleController.changevalueOfHome(false);
+    }
+    if(index==1){
+      getAllAccountPatients();
+      groupChatController.changevalueOChat(false);
+
+      addArticleController.changevalueOfHome(false);
+
+
       update();
     }
     if(index==2){
@@ -74,9 +85,15 @@ Future<void> changeValueOfIndex(value) async {
     }
     if(index==3){
       getDoctorsData();
+
       // groupChatController.changevalueOChat(false);
       //
       // addArticleController.changevalueOfHome(false);
+
+      groupChatController.changevalueOChat(false);
+
+      addArticleController.changevalueOfHome(false);
+
 
       update();
     }
@@ -84,17 +101,24 @@ Future<void> changeValueOfIndex(value) async {
 update();
 }
   Future<void> getAllAccountPatients() async {
+
   if(patients.isNotEmpty){
     patients = [];
     update();
+
+  patients = [];
     FirebaseFirestore.instance.collection("patients").get().then((value) {
       value.docs.forEach((element) {
         patients.add(PatientsAccountModel.formJson(element.data()));
 
 
+
         update();
 
         print(patients.length);
+          update();
+
+          print(patients.length);
 
       });
       update();
@@ -113,6 +137,7 @@ update();
       update();
     });
   }
+
 
     update();
   }

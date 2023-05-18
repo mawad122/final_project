@@ -22,6 +22,7 @@ class HomeView extends GetView<LayoutController> {
   @override
   Widget build(BuildContext context) {
 // valueOfHome ==false?null:controller.getAllCategories();
+valueOfHome ==false?null:controller.getAllCategories();
     return GetBuilder<LayoutController>(
       init:LayoutController() ,
       builder: (controller){
@@ -70,6 +71,9 @@ child: Padding(
         // customCircleAvatar(20,widget:  const Icon(Icons.delete,color: Colors.white,),color: Colors.green,onTap: (){
         //   controller.deleteCategories(controller.categories[index].id);
         // }),
+        customCircleAvatar(20,widget:  const Icon(Icons.delete,color: Colors.white,),color: Colors.green,onTap: (){
+          controller.deleteCategories(controller.categories[index].id);
+        }),
 
       ],
     ),

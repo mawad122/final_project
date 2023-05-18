@@ -38,6 +38,7 @@ class AddArticleView extends GetView<AddArticleController> {
                   LayoutController layoutController=LayoutController();
                   layoutController.changeValueOfIndex(0).then((value){
                     // controller.changevalueOfHome(true);
+                    controller.changevalueOfHome(true);
 
                     loginController.moveBetweenPages('layout');
 

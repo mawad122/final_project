@@ -9,7 +9,9 @@ class LayoutPatientsAppView extends GetView<LayoutPatientsAppController> {
   const LayoutPatientsAppView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
     controller.getAllCategories();
+
     return GetBuilder<LayoutPatientsAppController>(
       init: LayoutPatientsAppController(),
       builder: (controller){

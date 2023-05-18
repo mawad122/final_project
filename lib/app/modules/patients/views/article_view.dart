@@ -31,6 +31,11 @@ LayoutPatientsAppController layout=LayoutPatientsAppController();
   loginController.moveBetweenPages('LayoutPatientsAppView');
 
 // });
+controller.changevalueOfHomePatients(true);
+layout.getAllCategories().then((value) {
+  loginController.moveBetweenPages('LayoutPatientsAppView');
+
+});
                 },child: const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.black,)),
                 CustomSizeBox(0,width: 20,),
                 CustomSizeBox(0,width: 10,),CustomText(Colors.black, 20, FontWeight.w600, "${argument['nameCategories']}"),

@@ -24,6 +24,7 @@ class ArticleDetailsView extends GetView<ArticleDetailsController> {
               argument['image']==null?Container(height: 100,width: double.infinity,child: Center(child: Text("There is no image",style: TextStyle(color: Colors.red),)),)
 
               :Image(image:NetworkImage("${argument['image']}"),height: 400,width: double.infinity,fit: BoxFit.cover,),
+              Image(image:NetworkImage("${argument['image']}"),height: 400,width: double.infinity,fit: BoxFit.cover,),
               Padding(
                 padding: const EdgeInsets.only(left: 20,top: 60),
                 child: GestureDetector(
